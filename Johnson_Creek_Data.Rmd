@@ -1,0 +1,27 @@
+---
+title: "Johnson_Creek"
+author: "Alexandra Nosal"
+date: "10/30/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+
+```{r}
+Sample_Key <- read_csv("Chem313_Johnson_Creek/Sample_Key.csv")
+ICPMS_Data <- read_csv("Chem313_Johnson_Creek/ICPMS_Data.csv")
+AA_Data <- read_csv("Chem313_Johnson_Creek/AA_Data.csv")
+```
+
+```{r}
+view(Sample_Key)
+```
+
