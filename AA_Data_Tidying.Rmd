@@ -1,0 +1,33 @@
+---
+title: "AA_Data_Tidying"
+author: "Alexandra Nosal"
+date: "10/30/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+```{r}
+AA_Data <- read_csv("AA_Data.csv", col_types = cols(`%RSD` = col_number(), 
+    Analysis = col_number(), `Sample Key` = col_number()), 
+    skip = 4) %>%
+  rename(Sample.Key = "Sample Key")
+View(AA_Data)
+
+sample_key <- read.csv("~/Chemistry 313/Johnson Creek/Johnson_Creek_ICPMS/Sample_Key.csv", skip=0)
+```
+
+```{r}
+AA_merged <- merge(sample_key, AA_Data)
+```
+
+```{r}
+rm(list = setdiff(ls(), "AA_merged"))
+```
