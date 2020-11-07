@@ -40,6 +40,8 @@ ICPMS_tidy <- ICPMS_imported %>%
   select(-Ge_CPS)
 
 all(RSD_data$Sample.Key == ICPMS_tidy$Sample.Key, RSD_data$metal == ICPMS_tidy$metal)
+
+write.csv(ICPMS_tidy,'ICPMS_tidy_data.csv')
 ```
 
 ```{r}
@@ -49,7 +51,6 @@ ICPMS_merged <- merge(sample_key, ICPMS_tidy)
 ```{r}
 rm(list = setdiff(ls(), "ICPMS_merged"))
 ```
-
 
 
 

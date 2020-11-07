@@ -1,0 +1,49 @@
+---
+title: "Untitled"
+author: "Alexandra Nosal"
+date: "11/6/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+For Loops
+  for (i in list) {
+    #do something
+  }
+i can be any variable, does not need to be previously defined
+
+```{r}
+list <- c(1, 3, 4, 2, 5)
+new list <- NULL
+second_list <- c("a", "b", "c", "d")
+
+for (i in list){
+  new_list <-  c(new_list, i)
+  print(c("i is now equal to", i))
+  print(new_list)
+}
+
+for (i in list){
+  print(c("i is now equal to", i))
+  for(new_variable in second_list){
+    print(c("new_variable is equal to", new_variable)
+  }
+}
+
+```
+
+```{r}
+sample_number <- 10
+metal_analyzed < 
+  
+filter_sample <- function(sample_number, metal_analyzed){
+  Sample <- ICPMS %>%
+    filter(sample_key == sample_analyzed) %>%
+    filter(metal == metal_analyzed)
+  return(Sample)
+}
+
+```

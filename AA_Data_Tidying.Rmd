@@ -15,13 +15,15 @@ library(readr)
 ```
 
 ```{r}
-AA_Data <- read_csv("AA_Data.csv", col_types = cols(`%RSD` = col_number(), 
-    Analysis = col_number(), `Sample Key` = col_number()), 
-    skip = 4) %>%
-  rename(Sample.Key = "Sample Key")
-View(AA_Data)
+AA_Data_Tidy <- read_csv("Chemistry 313/Johnson Creek/Johnson_Creek_ICPMS/AA_Data.csv", 
+    col_types = cols(`%RSD` = col_number(), 
+        `Sample Key` = col_number(), X3 = col_number()), 
+    skip = 4)
+View(AA_Data_Tidy)
 
 sample_key <- read.csv("~/Chemistry 313/Johnson Creek/Johnson_Creek_ICPMS/Sample_Key.csv", skip=0)
+
+write.csv(AA_Data_Tidy,'AA_tidy_data.csv')
 ```
 
 ```{r}
